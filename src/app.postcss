@@ -1,0 +1,87 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1,h2,h3,h4,h5,h6 {
+        @apply font-bold text-indigo-700 dark:text-indigo-300
+    }
+    h6 {
+        @apply font-medium
+    }
+    h4 {
+        @apply text-lg
+    }
+    h3 {
+        @apply text-xl
+    }
+    h2 {
+        @apply text-2xl
+    }
+    h1 {
+        @apply text-3xl
+    }
+    a, button {
+        @apply transition
+    }
+    a {
+        @apply text-blue-600 dark:text-blue-400 hover:text-pink-600 dark:hover:text-pink-400
+    }
+}
+
+@layer components {
+    .sidebar {
+        @apply bg-indigo-600 text-gray-100 dark:bg-indigo-400 dark:text-gray-900 text-lg font-semibold transition-all overflow-hidden w-14 lg:w-72 xl:w-72 2xl:w-80 flex-shrink-0 h-screen fixed md:sticky top-0
+    }
+    .sidebar .burger {
+        @apply p-4 py-3 w-full text-2xl hover:bg-gray-900  text-left hover:bg-opacity-20
+    }
+    .sidebar nav {
+        @apply my-4 flex flex-col
+    }
+    .sidebar nav a {
+        @apply p-4 hover:bg-gray-900 hover:bg-opacity-20 flex gap-x-4 lg:gap-x-6 items-center text-gray-200 dark:text-gray-900
+    }
+    .sidebar nav a i {
+        @apply text-xl w-6
+    }
+    .sidebar nav a span {
+        @apply opacity-0 lg:opacity-100 transition whitespace-nowrap
+    }
+    .sidebar nav a.active {
+        @apply bg-gray-900 bg-opacity-50
+    }
+
+    .sidebar.open {
+        @apply w-80 lg:w-14
+    }
+    .sidebar.open nav a span {
+        @apply opacity-100 lg:opacity-0
+    }
+    .sidebar .parent-menu-item span{
+        @apply flex-grow
+    }
+    .sidebar .parent-menu-item i.caret {
+        @apply transition-transform w-5 h-5 flex items-center justify-center
+    }
+    .sidebar .parent-menu-item.open {
+        @apply bg-gray-900 bg-opacity-20
+    }
+    .sidebar .parent-menu-item.open i.caret {
+        @apply transform rotate-180
+    }
+    .sidebar .submenu {
+        @apply bg-gray-900 bg-opacity-20 text-base
+    }
+    .sidebar .submenu a {
+        @apply lg:pl-10
+    }
+    .sidebar.open .submenu a {
+        @apply lg:pl-4
+    }
+
+    .bar {
+        @apply w-3
+    }
+}
